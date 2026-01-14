@@ -58,7 +58,7 @@ jobs:
             pkg upgrade -y
             pkg install -y bash cmake git
           run: |
-            git config --global --add safe.directory /home/runner/work/mvdsv/mvdsv
+            git config --global --add safe.directory "${GITHUB_WORKSPACE:-$(pwd)}"
             ./build_cmake.sh ${{ matrix.target }}
 
       - name: Set up QEMU
