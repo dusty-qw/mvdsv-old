@@ -46,7 +46,7 @@ cvar_t	sv_kickuserinfospamcount = {"sv_kickuserinfospamcount", "300"};
 cvar_t	sv_maxuploadsize = {"sv_maxuploadsize", "1048576"};
 
 #ifdef FTE_PEXT_CHUNKEDDOWNLOADS
-cvar_t  sv_downloadchunksperframe = {"sv_downloadchunksperframe", "15"};
+cvar_t  sv_downloadchunksperframe = {"sv_downloadchunksperframe", "30"};
 #endif
 
 #ifdef FTE_PEXT2_VOICECHAT
@@ -3707,13 +3707,12 @@ void SV_RunCmd (usercmd_t *ucmd, qbool inside, qbool second_attempt) //bliP: 24/
 			sv_client->msecs = 0;
 	}
 	//<-
-	cmd = *ucmd;
 
 	// Apply safestrafe before physics processing
 	if (!inside) {
 		SV_ApplySafestrafe(sv_client, ucmd);
-		cmd = *ucmd; // Update cmd with potentially modified ucmd
 	}
+	cmd = *ucmd;
 
 	// chop up very long command
 	if (cmd.msec > 50)

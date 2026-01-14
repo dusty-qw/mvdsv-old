@@ -66,13 +66,13 @@ void CleanName_Init (void)
 	chartbl[33] = chartbl[33 + 128] = '!';
 
 	// #
-	chartbl[35] = chartbl[35 + 128] = '#';
+	// chartbl[35] = chartbl[35 + 128] = '#';
 
 	// %
-	chartbl[37] = chartbl[37 + 128] = '%';
+	// chartbl[37] = chartbl[37 + 128] = '%';
 
 	// &
-	chartbl[38] = chartbl[38 + 128] = '&';
+	// chartbl[38] = chartbl[38 + 128] = '&';
 
 	// '
 	chartbl[39] = chartbl[39 + 128] = '\'';
